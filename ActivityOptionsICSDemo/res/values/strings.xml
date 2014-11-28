@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ActivityOptionsJBTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+<string name="tower_of_london">The Tower of London has played a prominent role in English history. It was besieged several times and controlling it has been important to controlling the country. The Tower has served variously as an armoury, a treasury, a menagerie, the home of the Royal Mint, a public records office, and the home of the Crown Jewels of the United Kingdom. From the early 14th century until the reign of Charles II, a procession would be led from the Tower to Westminster Abbey on the coronation of a monarch. In the absence of the monarch, the Constable of the Tower is in charge of the castle. This was a powerful and trusted position in the medieval period. In the late 15th century the castle was the prison of the Princes in the Tower. Under the Tudors, the Tower became used less as a royal residence, and despite attempts to refortify and repair the castle its defences lagged behind developments to deal with artillery.</string>
+</resources>
