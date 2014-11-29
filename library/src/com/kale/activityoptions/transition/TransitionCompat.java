@@ -228,7 +228,7 @@ public class TransitionCompat {
 		}
 		//执行屏幕的动画
 		if (mTransitionAnims == null) {
-			final SceneScaleUp anim = new SceneScaleUp(activity, true,
+			final SceneScaleUp anim = new SceneScaleUp(activity,
 					mStartX, mStartY, mWidth, mHeight);
 			anim.setAnimsInterpolator(mInterpolator);
 			anim.setAnimsStartDelay(mStartDelay);
@@ -279,7 +279,7 @@ public class TransitionCompat {
 		}
 		//执行屏幕的动画
 		if (mTransitionAnims == null) {
-			final SceneScaleUp anim = new SceneScaleUp(activity, false,
+			final SceneScaleUp anim = new SceneScaleUp(activity,
 					mStartX, mStartY, mWidth, mHeight);
 			anim.setAnimsInterpolator(mInterpolator);
 			anim.setAnimsStartDelay(mStartDelay);
@@ -442,7 +442,7 @@ public class TransitionCompat {
 		}
 		// 执行屏幕的动画
 		if (mTransitionAnims == null) {
-			SceneFade anim = new SceneFade(activity, false);
+			SceneFade anim = new SceneFade(activity);
 			anim.setAnimsInterpolator(mInterpolator);
 			anim.setAnimsStartDelay(mStartDelay);
 			anim.setAnimsDuration(mAnimTime);

@@ -19,9 +19,9 @@ public class SceneScaleUp extends TransitionAnims{
 	 * @param time
 	 * @param isShowing:是否是从无到有的显示状态，如果是true就是显示
 	 */
-	public SceneScaleUp(Activity activity, boolean isEntireScreenAnim, 
+	public SceneScaleUp(Activity activity, 
 			float startX, float startY, float width, float height) {
-		super(activity, isEntireScreenAnim);
+		super(activity);
 		// TODO 自动生成的构造函数存根
 		mStartX = startX;
 		mStartY = startY;

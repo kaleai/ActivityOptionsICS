@@ -19,9 +19,7 @@ public abstract class TransitionAnims {
 	
 	private Activity mActivity;
 	private View mSceneRoot;
-	private Drawable mBackground;
-	private boolean mIsEntireScreenAnim;
-	
+	private Drawable mBackground;	
 	
 	private long mTime = 300;
 	private long mStartDelay = 0;
@@ -30,25 +28,17 @@ public abstract class TransitionAnims {
 	
 	/**
 	 * @param activity
-	 * @param isEntireScreenAnim:如果让整个屏幕（包括actionbar）执行动画，就传入true。
-	 * 如果为true那么整个屏幕，包括元素都有一致的动画效果，所以在sharedElements，bitmapAnim
-	 * 时请传入false。
-	 * 如果传入false，那么仅仅是actionbar下方的view进行动画效果
 	 */
-	public TransitionAnims(Activity activity, boolean isEntireScreenAnim) {
+	public TransitionAnims(Activity activity) {
 		mActivity = activity;
 		//设置窗口的背景图，用来做渐变
 		mBackground = activity.getResources().getDrawable(R.drawable.background);
 		mBackground.setAlpha(0);//初始背景透明度为0
-		mIsEntireScreenAnim = isEntireScreenAnim;
 		// http://ask.csdn.net/questions/209
 		// http://blog.csdn.net/u011494050/article/details/38775589
 		// 得到当前视图的顶级视图，用来做布局的动画
-		if (isEntireScreenAnim) {
-			mSceneRoot = (ViewGroup)activity.getWindow().getDecorView();
-		}else {
-			mSceneRoot = ((ViewGroup) activity.getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
-		}
+		mSceneRoot = ((ViewGroup) getActivity().getWindow().getDecorView()).getChildAt(0);
+		//mSceneRoot = ((ViewGroup) activity.getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
 		mActivity.getWindow().setBackgroundDrawable(mBackground);
 	}
 	
@@ -89,10 +79,6 @@ public abstract class TransitionAnims {
 	 */
 	public Drawable getBackground() {
 		return mBackground;
-	}
-	
-	public boolean getIsEntireScreenAnim() {
-		return mIsEntireScreenAnim;
 	}
 	
 	/**

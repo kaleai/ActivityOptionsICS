@@ -9,8 +9,8 @@ import com.kale.activityoptions.transition.TransitionAnims;
 
 public class SceneFade extends TransitionAnims{
 	
-	public SceneFade(Activity activity, boolean isEntireScreenAnim) {
-		super(activity, isEntireScreenAnim);
+	public SceneFade(Activity activity) {
+		super(activity);
 		// TODO 自动生成的构造函数存根
 	}
 

@@ -1,5 +1,6 @@
 package com.example.activityoptionsjbtest;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -8,18 +9,15 @@ import android.os.Message;
 import android.support.v4.util.Pair;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kale.activityoptions.ActivityCompatICS;
 import com.kale.activityoptions.ActivityOptionsCompatICS;
 
-
-
-
 public class MainActivity extends ActionBarActivity {
+	
+	public static boolean isSceneAnim = false;
 	
 	private ImageView orginalImageView;
 	private TextView orginalTextView;
@@ -32,11 +30,14 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public void handleMessage(Message msg) {
         	if (msg.what == 123) {
-        		Animation fadeAnim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.show);
-        		fadeAnim.setFillAfter(true);
-        		orginalImageView.startAnimation(fadeAnim);
-    			orginalTextView.startAnimation(fadeAnim);
-        		chromeIView.startAnimation(fadeAnim);
+        		orginalImageView.setVisibility(View.INVISIBLE);
+    			orginalTextView.setVisibility(View.INVISIBLE);
+        		chromeIView.setVisibility(View.INVISIBLE);
+			} else if (msg.what == 321) {
+				orginalImageView.setVisibility(View.VISIBLE);
+    			orginalTextView.setVisibility(View.VISIBLE);
+        		chromeIView.setVisibility(View.VISIBLE);
+        		isSceneAnim = false;
 			}
         }
     }
@@ -59,6 +60,12 @@ public class MainActivity extends ActionBarActivity {
 	public void buttonListener(View views) {
 		switch (views.getId()) {
 		case R.id.custom_button:
+			
+//			View mSceneRoot = ((ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
+			/*View mSceneRoot = (((ViewGroup) getWindow().getDecorView()).getChildAt(0));
+			Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_bottom_out);
+			animation.setDuration(2000);
+			mSceneRoot.startAnimation(animation);*/
 			customAnim();
 			//startActivity(intent);
 			break;
@@ -104,6 +111,7 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	public void screenTransitAnim(View v,int id) {
+		isSceneAnim = true;
 		ActivityOptionsCompatICS options = ActivityOptionsCompatICS.
 				makeSceneTransitionAnimation(this, v,id);
 		ActivityCompatICS.startActivity(MainActivity.this, intent, options.toBundle());
@@ -116,14 +124,7 @@ public class MainActivity extends ActionBarActivity {
 	 */
 	@SuppressWarnings("unchecked")
 	public void screenTransitAnimByPair(Pair<View, Integer>... views) {
-		Animation fadeAnim = AnimationUtils.loadAnimation(this, android.R.anim.fade_out);
-		fadeAnim.setFillAfter(true);
-		for (int i = 0; i < views.length; i++) {
-			Pair<View, Integer> pair = views[i];
-			pair.first.startAnimation(fadeAnim);
-		}
-		/*ActivityOptionsCompatICS options = ActivityOptionsCompatICS.makeSceneTransitionAnimation(
-				this, chromeIView, R.id.target_chrome_imageView);*/
+		isSceneAnim = true;
 		ActivityOptionsCompatICS options = ActivityOptionsCompatICS.makeSceneTransitionAnimation(
 				MainActivity.this, views);
 		ActivityCompatICS.startActivity(MainActivity.this, intent, options.toBundle());
