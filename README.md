@@ -3,9 +3,11 @@ ActivityOptionsICS
 f you are thinking on customizing the animation of Activity transition then probably you would look for ActivityOptions.However ActivityOptions class introduced in Android 4.1 (Jelly bean). ActivityOptionsICS can make it use in 3.1+. The library provided some methods which can help you to customize the Activity Animation.
 
 ![](http://images.cnitblog.com/blog/651487/201411/281237244814806.gif)
-![](http://images.cnitblog.com/blog/651487/201411/281238364811410.gif)
-ActivityOptionsCompatICS
+![](http://images.cnitblog.com/blog/651487/201411/281238364811410.gif)  
 
+
+ActivityOptionsCompatICS
+--
 
 1. public static ActivityOptionsCompatICS makeCustomAnimation(Context context,int enterResId, int exitResId)
 >This method allows to pass custom animation and when the Atyctivi is launched, it gets rendered accordingly. Here you can pass animation for transitioning out Activity as well as for transitioning in Activity   
@@ -20,7 +22,8 @@ ActivityOptionsCompatICS
 >This method carries the position of one shared element to the started Activity.The position of <code>sharedElement</code> will be used as the epicenter for the exit Transition. 
 
 5. public static ActivityOptionsCompatICS makeSceneTransitionAnimation(Activity activity, Pair<View, Integer>... sharedElements)
->This method carries the position of multiple shared elements to the started Activity. The position of the first element in sharedElements will be used as the epicenter for the exit Transition. The position of the associated shared element in the launched Activity will be the epicenter of its entering Transition.
+>This method carries the position of multiple shared elements to the started Activity. The position of the first element in sharedElements will be used as the epicenter for the exit Transition. The position of the associated shared element in the launched Activity will be the epicenter of its entering Transition.  
+
 
 ActivityCompatICS
 ----
