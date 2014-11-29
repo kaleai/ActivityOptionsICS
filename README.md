@@ -5,12 +5,22 @@ f you are thinking on customizing the animation of Activity transition then prob
 ![](http://images.cnitblog.com/blog/651487/201411/281237244814806.gif)
 ![](http://images.cnitblog.com/blog/651487/201411/281238364811410.gif)
 ActivityOptionsCompatICS
--------
+
+
 1. public static ActivityOptionsCompatICS makeCustomAnimation(Context context,int enterResId, int exitResId)
-1. public static ActivityOptionsCompatICS makeScaleUpAnimation(View source, int startX, int startY, int width, int height)
-1. public static ActivityOptionsCompatICSmakeThumbnailScaleUpAnimation(View source, Bitmap thumbnail, int startX, int startY) 
-1. public static ActivityOptionsCompatICS makeSceneTransitionAnimation(Activity activity, View view, sharedElement,int sharedElementId)
-1. public static ActivityOptionsCompatICS makeSceneTransitionAnimation(Activity activity, Pair<View, Integer>... sharedElements)
+>This method allows to pass custom animation and when the Atyctivi is launched, it gets rendered accordingly. Here you can pass animation for transitioning out Activity as well as for transitioning in Activity   
+
+2. public static ActivityOptionsCompatICS makeScaleUpAnimation(View source, int startX, int startY, int width, int height)  
+>This method scales up the Activity from the initial size to its final representational size. It can be used to scale up the activity from the view which has launched this activity.  
+
+3. public static ActivityOptionsCompatICSmakeThumbnailScaleUpAnimation(View source, Bitmap thumbnail, int startX, int startY)   
+>In this animation, a thumbnail of the activity scales up to the final size of the activity.  
+
+4. public static ActivityOptionsCompatICS makeSceneTransitionAnimation(Activity activity, View view, sharedElement,int sharedElementId)
+>This method carries the position of one shared element to the started Activity.The position of <code>sharedElement</code> will be used as the epicenter for the exit Transition. 
+
+5. public static ActivityOptionsCompatICS makeSceneTransitionAnimation(Activity activity, Pair<View, Integer>... sharedElements)
+>This method carries the position of multiple shared elements to the started Activity. The position of the first element in sharedElements will be used as the epicenter for the exit Transition. The position of the associated shared element in the launched Activity will be the epicenter of its entering Transition.
 
 ActivityCompatICS
 ----
