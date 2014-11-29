@@ -60,12 +60,6 @@ public class MainActivity extends ActionBarActivity {
 	public void buttonListener(View views) {
 		switch (views.getId()) {
 		case R.id.custom_button:
-			
-//			View mSceneRoot = ((ViewGroup) getWindow().getDecorView().findViewById(android.R.id.content)).getChildAt(0);
-			/*View mSceneRoot = (((ViewGroup) getWindow().getDecorView()).getChildAt(0));
-			Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_bottom_out);
-			animation.setDuration(2000);
-			mSceneRoot.startAnimation(animation);*/
 			customAnim();
 			//startActivity(intent);
 			break;
