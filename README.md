@@ -105,4 +105,10 @@ If you want use this library, you only have to download this project, import it 
             TransitionCompat.finishAfterTransition(this);
             
         }
-    }
+    }  
+Developed By
+--------------------
+
+Kale <developer_kale@qq.com>  
+
+![](https://avatars3.githubusercontent.com/u/9552155?v=3&s=460)
