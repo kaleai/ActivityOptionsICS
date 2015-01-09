@@ -1,4 +1,4 @@
-ActivityOptionsICS
+ ActivityOptionsICS
 ===========
 f you are thinking on customizing the animation of Activity transition then probably you would look for ActivityOptions.However ActivityOptions class introduced in Android 4.1 (Jelly bean). ActivityOptionsICS can make it use in 3.1+. The library provided some methods which can help you to customize the Activity Animation.
 
@@ -88,23 +88,33 @@ If you want use this library, you only have to download this project, import it 
   
   
 ##In TargetActivity
+1. make translucentTheme in style.xml    
+<style name="TranslucentTheme" parent="AppBaseTheme">
+<item name="android:windowIsTranslucent">true</item> 
+</style>  
 
+1. set targetActivity's theme in manifest.xml  
+    <activity 
+    android:name="com.example.activityoptionsjbtest.TargetActivity" 
+    android:theme="@style/TranslucentTheme" />  
+  
+1. start transition in targetActivity 
 
     public class TargetActivity extends Activity{
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            // TODO 自动生成的方法存根
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_target);// 这段代码必须放在TransitionCompatICS各种设置之后
-            TransitionCompat.startTransition(this, R.layout.activity_target);
-        }
-        
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+    // TODO 自动生成的方法存根
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_target);
+    TransitionCompat.startTransition(this, R.layout.activity_target);
+    }
+    
        @Override
-        public void onBackPressed() {
-            //super.onBackPressed();// 这段代码必须放在TransitionCompatICS各种设置之后
-            TransitionCompat.finishAfterTransition(this);
-            
-        }
+    public void onBackPressed() {
+    //super.onBackPressed();
+    TransitionCompat.finishAfterTransition(this);
+    
+    }
     }  
 Developed By
 --------------------

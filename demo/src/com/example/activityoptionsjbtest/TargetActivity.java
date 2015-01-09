@@ -5,7 +5,6 @@ import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 
 import com.kale.activityoptions.anim.ViewAnimationListenerAdapter;

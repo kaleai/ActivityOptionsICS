@@ -21,7 +21,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.activityoptionsjbtest.TargetActivity" />
+        
+        <activity android:name="com.example.activityoptionsjbtest.TargetActivity" 
+            android:theme="@style/TranslucentTheme" />
     </application>
 
 </manifest>

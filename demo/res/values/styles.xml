@@ -14,9 +14,11 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
-        <!-- 允许使用transitions -->  
-         <item name="android:windowIsTranslucent">true</item>  
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+     <style name="TranslucentTheme" parent="AppBaseTheme">
+        <item name="android:windowIsTranslucent">true</item> 
     </style>
 
 </resources>

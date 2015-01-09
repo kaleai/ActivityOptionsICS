@@ -50,8 +50,8 @@ public class MainActivity extends ActionBarActivity {
 		
 		intent = new Intent(MainActivity.this, TargetActivity.class);
 		
-		orginalImageView = (ImageView)findViewById(R.id.orginal_imageView);
-		orginalTextView = (TextView)findViewById(R.id.orginal_textView);
+		orginalImageView = (ImageView)findViewById(R.id.original_imageView);
+		orginalTextView = (TextView)findViewById(R.id.original_textView);
 		chromeIView = (ImageView)findViewById(R.id.chrome_imageView);
 		
 	}
