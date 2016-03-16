@@ -1,6 +1,7 @@
  ActivityOptionsICS
  
- #本项目停止维护
+ ---
+# 本项目停止维护
  
 ===========
 f you are thinking on customizing the animation of Activity transition then probably you would look for ActivityOptions.However ActivityOptions class introduced in Android 4.1 (Jelly bean). ActivityOptionsICS can make it use in 3.1+. The library provided some methods which can help you to customize the Activity Animation.
